@@ -4,6 +4,9 @@
 
 .DS_Store
 
+## API settings
+WeatherInformationMVVM/WeatherInformationMVVM/APIKeyConfig.swift
+
 ## User settings
 xcuserdata/
 
