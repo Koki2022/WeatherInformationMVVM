@@ -1,10 +1,11 @@
 //
-//  ContentView.swift
+//  WeatherInfoView.swift
 //  WeatherInformationMVVM
 //
 //  Created by 高橋昴希 on 2025/04/21.
 //
 
+// WeatherInfoView.swift: 最新の天気を表示するView
 import SwiftUI
 
 struct WeatherInfoView: View {
