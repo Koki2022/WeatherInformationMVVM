@@ -51,7 +51,7 @@ class WeatherInfoViewModel: ObservableObject {
                   receiveValue: { [weak self] response in
                 // 成功時にAPIレスポンスを受け取る
                 // 気温のセット
-                self?.temperature = String(format: "%.1f℃", response.main.temperature)
+                self?.temperature = String(format: "%.1f℃", response.main.temp)
                 // 天気の説明
                 self?.description = response.weather.first?.description ?? ""
                 // アイコン画像のURL作成

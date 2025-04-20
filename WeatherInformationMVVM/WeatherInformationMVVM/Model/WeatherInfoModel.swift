@@ -18,7 +18,7 @@ struct WeatherResponse: Decodable { //Decodable: APIから返ってきたJSONを
 
 // "main" の中にあるデータに対応
 struct Main: Decodable {
-    let temperature: Double // 気温
+    let temp: Double // 気温
 }
 
 // 天気の説明やアイコンを表す配列要素
