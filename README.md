@@ -1,5 +1,5 @@
 # WeatherInformationMVVM
-OpenWeatherMapAPIを使った、都市名を入力して最新の天気を表示するアプリ(MVVM)
+都市名を入力して最新の天気を表示するアプリ(MVVM)
 
 ## 1.概要
 アプリを起動すると、都市名を入力する欄が表示されます。お好きな都市名を英語で入力してください（初期値として「Tokyo」が入力されています）。
@@ -28,4 +28,19 @@ OpenWeatherMapAPIを使った、都市名を入力して最新の天気を表示
 
 <img width="773" alt="スクリーンショット 2025-04-21 7 22 04" src="https://github.com/user-attachments/assets/a548b53d-5d0c-48ad-aef4-fa791ffd9c5b" />
 
+【各ファイルと役割】
+
+|種類|ファイル名|概要|
+|:---:|:---:|:---:|
+|View|WeatherInfoView|入力された都市名の最新の天気を表示するView|
+|ViewModel|WeatherInfoViewModel|SwiftUI + Combine を使った非同期処理（API通信）とUIの自動更新を行う天気情報取得ロジックを実装|
+|Model|OriginalSearchBarView|OpenWeatherMapのJSON構造に対応するデータの構造体を定義するファイル|
+
+## 5. 工夫したコード／設計
+### OpenWeatherMap APIを活用し、天気情報を取得するコードを実装しました。
+・OpenWeatherMap APIの外部ライブラリをアプリに取り入れ、天気アイコン、気温、気候の説明といった天気情報を取得するコードを実装しました。
+
+## 6. 開発環境
+Xcode 16.2
+iOS 〇〇以降が必要です
 
