@@ -42,6 +42,17 @@ struct WeatherInfoView: View {
         .onAppear {
             viewModel.fetchWeather()
         }
+        // アラート設定
+        .alert("エラー", isPresented: Binding<Bool>(
+            // エラーメッセージがnilでないのを判断してアラートを出す
+            get: { viewModel.errorMessage != nil },
+            // アラートを閉じた時にerrorMessageをnilにして次のエラーが表示されるようにする
+            set: { _ in viewModel.errorMessage = nil }
+        )) {
+            Button("OK") { }
+        } message: {
+            Text(viewModel.errorMessage ?? "")
+        }
     }
 }
 

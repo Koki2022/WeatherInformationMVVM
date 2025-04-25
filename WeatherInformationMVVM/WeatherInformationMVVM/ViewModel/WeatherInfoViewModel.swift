@@ -11,6 +11,8 @@ import Combine
 // WeatherInfoViewModel.swift: 非同期処理（API通信）とUIの自動更新するため、SwiftUI + Combine を使った MVVM形式の天気情報取得ロジックを実装
 
 class WeatherInfoViewModel: ObservableObject {
+    // エラーメッセージをセット
+    @Published var errorMessage: String?
     // 都市名
     @Published var cityName: String = "Tokyo"
     // 気温
@@ -42,6 +44,8 @@ class WeatherInfoViewModel: ObservableObject {
                 switch completion {
                 case .failure(let error):
                     print("Error: \(error)")
+                    // 都市名に該当がないパターンと、ネットワーク接続が悪く天気情報が取得できないパターン
+                    self.errorMessage = "天気情報の取得に失敗しました。\n都市名またはネットワーク接続を\n確認してください"
                 case .finished:
                     break
                 }
